@@ -5,14 +5,20 @@ export default function Home() {
   return (
     <main className="flex flex-col min-h-screen p-6 bg-yellow-500 items-center justify-center">
       <div className='flex flex-row items-start'>
-        <div className='pt-40 h-400 w-800 text-8xl text-black mr-10'>
-          Healing
+        <div className='pt-20 h-400 w-800 text-8xl text-black mr-10'>
+          <div>
+            Healing
+          </div>
+          <div className='text-4xl items-center justify-center'>
+            <p className='pt-10'>Welcome to Healing.</p> 
+            <p className='pt-4'>This is a dating website.</p>
+          </div>
         </div>
         <div className='p-10'>
           <Image
             src="/homepage.jpg"
             width={500}
-            height={25}
+            height={20}
             alt="family photo for the homepage"
           />
         </div>
