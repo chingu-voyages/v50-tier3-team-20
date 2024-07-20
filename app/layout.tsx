@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { hennyPenny } from "./ui/fonts";
+import { headLandOne } from '@/app/ui/fonts';
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${hennyPenny.className} antialiased`}>{children}</body>
+      <body className={headLandOne.className}>{children}</body>
     </html>
   );
 }

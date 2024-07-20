@@ -1,20 +1,22 @@
 import './globals.css';
 import Image from 'next/image';
+import { hennyPenny } from "./ui/fonts";
+import { headLandOne } from './ui/fonts';
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen p-6 bg-yellow-500 items-center justify-center">
-      <div className='flex flex-row items-start'>
-        <div className='pt-20 h-400 w-800 text-8xl text-black mr-10'>
-          <div>
+    <main className="flex flex-col min-h-screen bg-yellow-500 justify-center items-center justify-evenly">
+      <div className='flex flex-row justify-evenly w-[80%]'>
+        <div className={`flex flex-col pt-20 text-8xl text-black ${hennyPenny.className} antialiased`}>
+          <div className='text-center'>
             Healing
           </div>
-          <div className='text-4xl items-center justify-center'>
+          <div className='flex flex-col text-4xl items-center justify-center'>
             <p className='pt-10'>Welcome to Healing.</p> 
             <p className='pt-4'>This is a dating website.</p>
           </div>
         </div>
-        <div className='p-10'>
+        <div className='flex'>
           <Image
             src="/homepage.jpg"
             width={500}
@@ -23,14 +25,15 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className='flex flex-row'>
-        <div className='w-600 h-300 bg-customGray '>
-          <button className='py-6 px-8 text-4xl'> Log In </button>
+      <div className='flex flex-row w-[60%] justify-evenly'>
+        <div className='bg-customGray rounded-md'>
+          <button className={`py-6 px-8 text-4xl ${headLandOne.className}`}> Log In </button>
         </div>
-        <div className='ml-40 w-500 h-250 bg-customGray'>
-          <button className='py-6 px-8 text-4xl'> Sign In </button>
+        <div className='bg-customGray rounded-md'>
+          <button className={`py-6 px-8 text-4xl ${headLandOne.className}`}> Sign In </button>
         </div>
       </div>
     </main>
   );
 }
+
