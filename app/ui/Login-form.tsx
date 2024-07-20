@@ -1,10 +1,30 @@
+"use client";
+
 import Link from "next/link";
 import { inter } from "./fonts";
+import { FormEvent, useRef } from "react";
+import { ExistingUser } from "../lib/types";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 export default function LoginForm() {
+  const router = useRouter();
+  const user = useRef<ExistingUser>({ email: "", password: "" });
+  async function onSubmit(e: FormEvent<HTMLFormElement>): Promise<void> {
+    e.preventDefault();
+    const res = await signIn("credentials", {
+      ...user.current,
+      callbackUrl: "/",
+    });
+
+    if (!res?.error) {
+      router.push("http://localhost:3000");
+    }
+  }
   return (
     <form
       className={`${inter.className} antialiased space-y-3 w-full md:w-1/3`}
+      onSubmit={onSubmit}
     >
       <div className="flex-1 rounded-lg bg-slate-900 px-6 pb-4 pt-8">
         <div className="w-full">
@@ -19,6 +39,7 @@ export default function LoginForm() {
                 type="email"
                 name="email"
                 placeholder="Enter your email address"
+                onChange={(e) => (user.current.email = e.target.value)}
                 required
               />
             </div>
@@ -37,6 +58,7 @@ export default function LoginForm() {
                 type="password"
                 name="password"
                 placeholder="Enter password"
+                onChange={(e) => (user.current.password = e.target.value)}
                 required
                 minLength={6}
               />
