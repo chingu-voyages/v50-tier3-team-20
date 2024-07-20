@@ -14,12 +14,14 @@ export default function SideNav() {
           </div>
         </Link>
       </div>
-      <div>
+      <div className='mr-3'>
         <div className="flex flex-row justify-between">
           <NavLinks />
           <form>
             <button className="flex items-center justify-center rounded-md text-customBrown hover:bg-customBrown hover:text-customWhite p-5 m-5">
+            <Link href="/">
               <div>Sign Out</div>
+            </Link>
             </button>
           </form>
         </div>

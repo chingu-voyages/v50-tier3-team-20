@@ -15,8 +15,10 @@ const config: Config = {
       },
       colors: {
         customGray: '#2c2c2c',
-        customWhite: '#e5e5e5',
+        customWhite: '#ffffff',
+        customYellowWhite: '#fafaf5',
         customBrown: '#7d6b3b',
+        customYellow: '#f5e7c3',
       },
     },
   },
