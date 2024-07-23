@@ -1,9 +1,11 @@
-import { NextAuthOptions } from "next-auth";
-import CredentialsProvider from "next-auth/providers/credentials";
+import NextAuth from "next-auth";
+import { authConfig } from "./auth.config";
+import Credentials from "next-auth/providers/credentials";
 
-export const authOptions: NextAuthOptions = {
+export const { handlers, signIn, signOut, auth } = NextAuth({
+  ...authConfig,
   providers: [
-    CredentialsProvider({
+    Credentials({
       // The name to display on the sign in form (e.g. "Sign in with...")
       name: "Credentials",
       // `credentials` is used to generate a form on the sign in page.
@@ -14,17 +16,10 @@ export const authOptions: NextAuthOptions = {
         email: { label: "Email", type: "text" },
         password: { label: "Password", type: "password" },
       },
-      async authorize(credentials, req) {
+      async authorize(credentials) {
         console.log(credentials);
-        return {
-          id: "1",
-          ...credentials,
-        };
+        return credentials;
       },
     }),
   ],
-  pages: {
-    signIn: "/logIn ",
-  },
-  debug: process.env.NODE_ENV !== "production",
-};
+});

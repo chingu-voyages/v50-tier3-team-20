@@ -6,7 +6,6 @@ import { useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
 
 export default function Page() {
-  // const user = localStorage.getItem("user");
   const { data: session, status } = useSession();
   // If logged in, it will redirect to the home page
   if (session) {
