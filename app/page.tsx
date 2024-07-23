@@ -1,11 +1,15 @@
+"use client";
+
 import './globals.css';
+
 import Image from 'next/image';
 import { hennyPenny } from "./ui/fonts";
 import { headLandOne } from './ui/fonts';
 
 export default function Home() {
-  return (
-    <main className="flex flex-col min-h-screen bg-yellow-500 justify-center items-center justify-evenly">
+ 
+    return (
+         <main className="flex flex-col min-h-screen bg-yellow-500 justify-center items-center justify-evenly">
       <div className='flex flex-row justify-evenly w-[80%]'>
         <div className={`flex flex-col pt-20 text-8xl text-black ${hennyPenny.className} antialiased`}>
           <div className='text-center'>
@@ -33,7 +37,7 @@ export default function Home() {
           <button className={`py-6 px-8 text-4xl ${headLandOne.className}`}> Sign In </button>
         </div>
       </div>
-    </main>
-  );
+    </main> 
+    );
 }
 
