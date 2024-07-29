@@ -2,23 +2,24 @@ services:
   app:
     build:
       context: .
-    image: nextjs-dev
     ports:
       - "3000:3000"
     environment:
-      - NODE_ENV= dev
-    develop:
-      watch:
-        - action: sync
-          path: ./app  
-          target: /app/app
-          ignore:
-            - node_modules/
-        - action: rebuild
-          path: package.json
+      - NODE_ENV=development
+    volumes:
+      - ./:/app
+      - node_modules:/app/node_modules
   db:
     image: postgres:16.3
     environment:
-      - POSTGRES_PASSWORD=POSTGRES_PASSWORD
+      - POSTGRES_PASSWORD=password 
+      - POSTGRES_DB=v50-tier3-team20
+      - POSTGRES_USER=postgres
     ports:
       - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  node_modules:
+  db_data:

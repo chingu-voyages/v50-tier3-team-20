@@ -4,6 +4,7 @@ WORKDIR /app
 COPY package*.json ./
 
 RUN npm install
+RUN npx primsma generate
 
 COPY . .
 EXPOSE 3000
