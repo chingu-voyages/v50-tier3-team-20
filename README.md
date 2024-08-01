@@ -35,7 +35,7 @@ your repo access and to practice PR'ing with your team *before* you start
 coding!
 
 - Sebin Hong: [GitHub](https://github.com/subsurfmodifier) / [LinkedIn](https://www.linkedin.com/in/sebin-hong-867b56291/)
-- Teammate name #2: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
+- Shrudhi Priya: [GitHub](https://github.com/ShrudhiPriya) / [LinkedIn](https://www.linkedin.com/in/shrudhi-priya/)
 
    ...
 - Teammate name #n: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
